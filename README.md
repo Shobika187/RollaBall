@@ -1,7 +1,7 @@
 # RollaBall
 
 ## Aim:
-
+To Roll a Ball using C# program in unity .
 ## Algorithm:
 
 1. File -> Scene -> Select the scene -> Save as-> New folder(Scenes)-> File name (MiniGame)
@@ -43,7 +43,61 @@ Copy the PlayerController and drag to Script folder
 Double click the PlayerController file and type the coding
 
 ## Program:
+```
+Developed by :Shobika P
+Register No: 212221230096
+```
+```
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
+public class Program : MonoBehaviour
+{
+    public float Xforce = 5.0f;
+    public float Zforce = 5.0f;
+    public float Yforce = 300f;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        float x = 0.0f;
+        float y = 0.0f;
+        float z = 0.0f;
+        if (Input.GetKey(KeyCode.A))
+        {
+            x = x - Xforce;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            x = x + Xforce;
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            z = z + Zforce;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            z = z - Zforce;
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            y = Yforce;
+        }
+        GetComponent<Rigidbody>().AddForce(x, y, z);
+
+    }
+}
+```
 ## Output:
+![image](https://github.com/Shobika187/RollaBall/assets/94508142/ad1ef9ab-a78b-40fb-9ae0-d68e176d8cb3)
+![image](https://github.com/Shobika187/RollaBall/assets/94508142/9afdf8fc-4e49-445b-b2f1-2038c764b24a)
+
 
 ## Result:
+Thus, The 3D application for Roll the Ball in unity is developed successfully.
